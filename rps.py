@@ -21,7 +21,7 @@ def beats(one, two):
             (one == 'paper' and two == 'rock'))
 
 # Here a Class to introduce the RealPlayer, it allows interaction.
-# If 'quit' is typed as move, the program ends.
+# If 'quit' is typed as move, the program ends. This is needed to exit before the number of turn is reached.
 class RealPlayer(Player):
     def move(self):
         while True:
@@ -33,6 +33,8 @@ class RealPlayer(Player):
                 return move
             print("Mossa non valida. Riprova.")
 
+# This Class manages the game logic. Players have a move each turn and after each turn the score gets updated.
+# A the end of the game the total score is displayed
 class Game:
     def __init__(self, p1, p2):
         self.p1 = p1
@@ -45,12 +47,24 @@ class Game:
         self.p1.learn(move1, move2)
         self.p2.learn(move2, move1)
 
+        if who_wins(move1, move2):
+            self.p1.score += 1
+            print("Player 1 wins this round!")
+        elif who_wins(move2, move1):
+            self.p2.score += 1
+            print("Player 2 wins this round!")
+        else:
+            print("It's a tie!")
+
+        print(f"Score -> Player 1: {self.p1.score}, Player 2: {self.p2.score}")
+
     def play_game(self):
         print("Game start!")
         for round in range(3):
             print(f"Round {round}:")
             self.play_round()
         print("Game over!")
+        print(f"Final Score -> Player 1: {self.p1.score}, Player 2: {self.p2.score}")
 
 
 if __name__ == '__main__':
