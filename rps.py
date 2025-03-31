@@ -15,7 +15,7 @@ class Player:
 
 # Something similar to a truth table is needed to determine the winner.
 # Rreturns True if a wins against be, otherwise False.
-def beats(one, two):
+def who_wins(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
             (one == 'paper' and two == 'rock'))
@@ -32,7 +32,7 @@ class RealPlayer(Player):
             if move in moves:
                 return move
             print("Mossa non valida. Riprova.")
-            
+
 # RandomPlayer is the PC which returns something chosen randomly from the moves list.
 class RandomPlayer(Player):
     def move(self):
