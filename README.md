@@ -4,5 +4,8 @@ The game of Rock Paper Scissors is played throughout the world. It dates back to
 
 The game has two players. In a single round of the game, each player secretly chooses one of three moves, or "throws" — rock, paper, or scissors. Then, players reveal their moves at the same time. If both players picked the same move, there is no winner. Otherwise, rock beats scissors; paper beats rock; and scissors beat paper. Players can play a single round, or "best of three", or any number of other options.
 
-##Project Aim
-Project submitted to udacity for Introduction to Programming with Python II course
+## Project Aim
+Project submitted to udacity for Introduction to Programming with Python II course.
+
+## Contribution
+Hopefully, this project may not require additional effort to further develop. However, feel free to reach me for any good ideas or improvements from wich I can learn much more about python :).
