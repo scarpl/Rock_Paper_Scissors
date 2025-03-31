@@ -20,6 +20,18 @@ def beats(one, two):
             (one == 'scissors' and two == 'paper') or
             (one == 'paper' and two == 'rock'))
 
+# Here a Class to introduce the RealPlayer, it allows interaction.
+# If 'quit' is typed as move, the program ends.
+class RealPlayer(Player):
+    def move(self):
+        while True:
+            move = input("Inserisci la tua mossa (rock, paper, scissors o 'quit' per uscire): ").strip().lower()
+            if move == 'quit':
+                print("Hai scelto di uscire dal gioco.")
+                exit()
+            if move in moves:
+                return move
+            print("Mossa non valida. Riprova.")
 
 class Game:
     def __init__(self, p1, p2):
