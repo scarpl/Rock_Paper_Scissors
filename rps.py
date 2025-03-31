@@ -32,6 +32,11 @@ class RealPlayer(Player):
             if move in moves:
                 return move
             print("Mossa non valida. Riprova.")
+            
+# RandomPlayer is the PC which returns something chosen randomly from the moves list.
+class RandomPlayer(Player):
+    def move(self):
+        return random.choice(moves)
 
 # This Class manages the game logic. Players have a move each turn and after each turn the score gets updated.
 # A the end of the game the total score is displayed
@@ -67,6 +72,7 @@ class Game:
         print(f"Final Score -> Player 1: {self.p1.score}, Player 2: {self.p2.score}")
 
 
+# Adding condition that allows to use the script directly or to import it without executing (or that's what I understood...)
 if __name__ == '__main__':
-    game = Game(Player(), Player())
+    game = Game(RealPlayer(), RandomPlayer())
     game.play_game()
