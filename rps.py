@@ -1,21 +1,17 @@
-#!/usr/bin/env python3
-
-"""This program plays a game of Rock, Paper, Scissors between two Players,
-and reports both Player's scores each round."""
+import random
 
 moves = ['rock', 'paper', 'scissors']
 
-"""The Player class is the parent class for all of the Players
-in this game"""
-
-
 class Player:
+    def __init__(self):
+        self.score = 0
+    
     def move(self):
         return 'rock'
 
     def learn(self, my_move, their_move):
-        pass
-
+        self.my_move = my_move
+        self.their_move = their_move
 
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
