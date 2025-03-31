@@ -93,5 +93,20 @@ class Game:
 # Adding condition that allows to use the script directly
 # or to import it without executing (or that's what I understood...)
 if __name__ == '__main__':
+
+        players = {
+        '1': AllRockPlayer,
+        '2': RandomPlayer,
+        '3': ReflectPlayer,
+        '4': CyclePlayer,
+        '5': HumanPlayer
+    }
+    print("Player list:")
+    for number, player in players.items():
+        print(f"{number}. {player.__name__}")
+    while (p1 := input("Choose player 1: ")) not in players.keys():
+        print("Invalid choice, please select player 1 from the list.")
+    while (p2 := input("Choose player 2: ")) not in players.keys():
+        print("Invalid choice, please select player 2 from the list.")
     game = Game(RealPlayer(), RandomPlayer())
     game.play_game()
