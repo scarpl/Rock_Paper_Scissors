@@ -13,6 +13,8 @@ class Player:
         self.my_move = my_move
         self.their_move = their_move
 
+# Something similar to a truth table is needed to determine the winner.
+# Rreturns True if a wins against be, otherwise False.
 def beats(one, two):
     return ((one == 'rock' and two == 'scissors') or
             (one == 'scissors' and two == 'paper') or
